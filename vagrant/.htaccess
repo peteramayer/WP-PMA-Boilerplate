@@ -1,0 +1,4 @@
+# Since We're pushing the vagrant folder up, 
+# we don't want anyone getting any ideas
+Order Deny, Allow
+Deny from all

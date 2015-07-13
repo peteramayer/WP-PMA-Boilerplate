@@ -1,0 +1,6 @@
+192.168.50.4 	local.wordpress.dev
+192.168.50.4 	local.wordpress-trunk.dev
+192.168.50.4 	src.wordpress-develop.dev
+192.168.50.4 	build.wordpress-develop.dev
+192.168.50.4 	vvv.dev
+
