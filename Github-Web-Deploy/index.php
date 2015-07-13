@@ -1,4 +1,5 @@
 <?php 
+include 'config.php';
 
 $payload = $_REQUEST['payload'];
 $force = $_REQUEST['force'];
@@ -20,7 +21,21 @@ if ( !!$payload ) {
 	$logso .= "\n". $payload['head_commit']['timestamp'];
 }
 
-$fetch = shell_exec('./gitfetch.sh 2>&1');
+$fetch_commands = array(
+	'cd ..',
+	'eval `ssh-agent -k`',
+	'eval `ssh-agent -s`',
+	'ssh-add '.$ssh_key_path.$ssh_pubkey_name,
+	'git fetch --all ',
+	'git reset --hard origin/'.$repo_branch_name,
+	'eval `ssh-agent -k`'
+);
+
+$join_commands = implode(" 2>&1 && ", $fetch_commands);
+echo $join_commands;
+
+$fetch = shell_exec('chmod 700 ./gitfetch.sh && ./gitfetch.sh 2>&1');
+
 $output = shell_exec('git log --name-status HEAD^..HEAD');
 
 echo "<pre> \n\n".$fetch."\n\n </pre>";

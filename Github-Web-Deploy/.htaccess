@@ -1,12 +1,12 @@
-<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
-	Order Allow, Deny
-	Deny from all
-</FilesMatch>
-<files index.php>
-	Order Deny, Allow
-	Allow from all
-</files>
-<files setup.php>
-	Order Deny, Allow
-	Allow from all
-</files>
+# <FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+# 	Order Allow, Deny
+# 	Deny from all
+# </FilesMatch>
+# <files index.php>
+# 	Order Deny, Allow
+# 	Allow from all
+# </files>
+# <files setup.php>
+# 	Order Deny, Allow
+# 	Allow from all
+# </files>
