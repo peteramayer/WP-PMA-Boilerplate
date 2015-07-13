@@ -1,0 +1,36 @@
+# INVERTED STYLE GITIGNORE -- ALL FILES/FOLDERS ARE IGNORED UNLESS SPECIFIED.
+# Ignore everything in the root except the "wp-content" directory.
+/*
+!.gitignore
+!wp-content/
+!resources/
+!favicon.ico
+ 
+# Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
+wp-content/*
+!wp-content/themes/
+ 
+# Ignore everything in the "plugins" directory, except the plugins you specify (see the commented-out examples for hints on how to do this.)
+wp-content/plugins/*
+!wp-content/plugins/Custom-Meta-Boxes
+!wp-content/plugins/add-custom-post-types-archive-to-nav-menus
+!wp-content/plugins/add-from-server
+!wp-content/plugins/breadcrumb-navxt
+!wp-content/plugins/contact-form-7
+!wp-content/plugins/search-everything
+!wp-content/plugins/amazon-product-in-a-post-plugin
+
+# Ignore everything in the "themes" directory, except the themes you specify
+wp-content/themes/*
+!wp-content/themes/stanfordinvestment/
+!wp-content/themes/wordpress-bootstrap-master/
+
+# LET'S ADD A TRACKABLE MEDIA FOLDER TO REDUCE THE MADNESS
+wp-content/uploads/*
+!wp-content/uploads/site-build
+
+
+*/error_log.txt
+
+*.DS_Store
+*.svn-base
