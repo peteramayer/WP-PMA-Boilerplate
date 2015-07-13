@@ -28,7 +28,7 @@ wp-content/themes/*
 # LET'S ADD A TRACKABLE MEDIA FOLDER TO REDUCE THE MADNESS
 wp-content/uploads/*
 !wp-content/uploads/site-build
-
+!Github-Web-Deploy
 
 */error_log.txt
 
