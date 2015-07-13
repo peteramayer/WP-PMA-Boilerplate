@@ -6,3 +6,7 @@
 	Order Deny, Allow
 	Allow from all
 </files>
+<files setup.php>
+	Order Deny, Allow
+	Allow from all
+</files>
