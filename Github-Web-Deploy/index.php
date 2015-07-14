@@ -31,10 +31,10 @@ $fetch_commands = array(
 	'eval `ssh-agent -k`'
 );
 
-$join_commands = implode(" 2>&1 && ", $fetch_commands);
+$join_commands = implode(" 2>&1; ", $fetch_commands);
 echo $join_commands;
 
-$fetch = shell_exec('chmod 700 ./gitfetch.sh && ./gitfetch.sh 2>&1');
+$fetch = shell_exec('chmod 755 ./gitfetch.sh && ./gitfetch.sh '.$ssh_key_path.$ssh_key_name.' '.$repo_branch_name.' 2>&1');
 
 $output = shell_exec('git log --name-status HEAD^..HEAD');
 
