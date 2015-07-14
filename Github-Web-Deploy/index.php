@@ -25,7 +25,7 @@ $fetch_commands = array(
 	'cd ..',
 	'eval `ssh-agent -k`',
 	'eval `ssh-agent -s`',
-	'ssh-add '.$ssh_key_path.$ssh_pubkey_name,
+	'ssh-add '.$ssh_key_path.$ssh_key_name,
 	'git fetch --all ',
 	'git reset --hard origin/'.$repo_branch_name,
 	'eval `ssh-agent -k`'
@@ -34,7 +34,8 @@ $fetch_commands = array(
 $join_commands = implode(" 2>&1; ", $fetch_commands);
 echo $join_commands;
 
-$fetch = shell_exec('chmod 755 ./gitfetch.sh && ./gitfetch.sh '.$ssh_key_path.$ssh_key_name.' '.$repo_branch_name.' 2>&1');
+//$fetch = shell_exec('chmod 755 ./gitfetch.sh && ./gitfetch.sh '.$ssh_key_path.$ssh_key_name.' '.$repo_branch_name.' 2>&1');
+$fetch = shell_exec($join_commands);
 
 $output = shell_exec('git log --name-status HEAD^..HEAD');
 
